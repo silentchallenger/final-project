@@ -1,0 +1,343 @@
+body {
+  margin: 0;
+}
+
+.body {
+  /* Base Styles and Layout */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.5;
+
+  margin: 0;
+
+  background-color: white;
+
+  color: black;
+}
+
+a, a:visited {
+  /* Link colors */
+  text-decoration: none;
+  
+  color: black;
+}
+
+.header-area {
+  /* Header Logo-Nav Main Flexbox */
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+
+  background-color: white;
+  color: black;
+}
+
+.header-menu-bar {
+  /* Header Team Name/Logo and Hamburger Menu Flexbox */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-menu-link {
+  /* Hamburger Menu Icon */
+  padding: 1.5rem;
+
+  transition-duration: 0.5s;
+
+  color: black;
+
+  background: none;
+  border: none;
+}
+
+.header-logo-name {
+  /* Header Team Name/Logo Flexbox */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  padding-left: 1rem;
+}
+
+.header-logo-name p {
+  /* Header Team Name Styling */
+  font-size: 20px;
+  width: 12ch;
+  color: black;
+}
+
+.header-logo-name img {
+  /* Header Logo Styling */
+  max-width: 30px;
+}
+
+.header-nav {
+  /* Header Navigation Links */
+  clear: both;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.3s ease-out;
+}
+
+.header-nav.open {
+  /* Header Navigation Links Open State */
+  max-height: 20rem;
+}
+
+.header-nav a {
+  /* Header Nav Button Styling */
+  display: block;
+  padding: 1rem;
+
+  color: black;
+}
+
+.header-nav ul {
+  /* Header Nav List Styling */
+  list-style: none;
+
+  padding-left: 0;
+
+  margin: auto;
+}
+
+.header-nav a:hover {
+  /* Header Nav Button Hover State Styling */
+  background-color: black;
+  color: white;
+  transition: all 200ms ease-out;
+}
+
+.header-nav a.active-page {
+  /* Header Nav Button Current Page Highlight */
+  font-weight: 700;
+}
+
+.banner-title {
+  /* Hero Section Styling */
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+  height: 510px;
+
+  margin: 0;
+
+  background: url('../images/banner.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: darken;
+}
+
+.banner-title h1 {
+  /* Hero Section Main Text Styling */
+  font-family: 'Reem Kufi Fun', Arial, Helvetica, cursive;
+  font-size: 32px;
+
+  color: #e9c46a;
+
+  margin: 0;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.banner-title p {
+  /* Hero Section Secondary Text Styling */
+  font-size: clamp(20px, 3vw, 32px);
+
+  max-width: 30ch;
+  margin: 0rem;
+  margin-left: 1rem;
+  
+  color: white;
+}
+
+.card {
+  /* Button Container */
+  max-width: 30ch;
+  margin: 1rem;
+
+  background-color: white;
+
+  font-family: 'Reem Kufi', 'Trebuchet MS', cursive;
+}
+
+
+.card a {
+  /* Button Content Style */
+  display: block;
+
+  font-size: clamp(18px, 2vw, 22px);
+
+  padding: 0.5rem;
+  margin: auto;
+
+  text-align: center;
+  text-decoration: none;
+
+  box-shadow: 0px 0px 12px 3px red;
+}
+
+.card:hover {
+  /* Button Hover State */
+  background-color: red;
+  transition: all 200ms ease-out;
+}
+
+main {
+  /* Content Area */
+  max-width: 40ch;
+
+  flex: auto;
+
+  margin: 1em auto;
+
+}
+
+footer {
+  /* Footer Area */
+  background-color: #e76f51;
+}
+
+footer p {
+  /* Copyright Text Styling */
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+
+  padding: 0.5rem;
+
+  color: black;
+}
+
+.footer-area {
+  /* Main Bottom Flexbox */
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.bottom-socials {
+  /* Bottom Logo and Socials Flexbox */
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-logo-title {
+  /* Bottom Website Title Styling */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-logo-title p {
+  margin-bottom: 0;
+}
+
+.fa {
+  /* Social Button Links */
+  width: 25px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.secondary-nav a {
+  /* Bottom Navigation Button Styling */
+  display: block;
+  padding: 0.5rem;
+}
+
+.secondary-nav ul {
+  /* Secondary Navigation Styling */
+  list-style: none;
+  padding-left: 0px;
+}
+
+.secondary-nav ul li:hover {
+  /* Secondary Navigation Styling */
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 40em) {
+  .header-area {
+    /* Header Logo-Nav Main Flexbox */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-logo-name {
+    /* Header Team Name and Logo Flexbox */
+    padding-left: 1rem;
+  }
+
+  .header-logo-name p {
+    /* Header Team Name Styling */
+    margin: auto;
+  }
+
+  .header-menu-link {
+    /* Hamburger Menu Icon */
+    display: none;
+  }
+
+  .header-nav {
+    /* Header Navigation Links */
+    max-height: none;
+  }
+
+  .header-nav ul {
+    /* Header Nav List Styling */
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .header-nav a.active-page {
+    /* Header Nav Button Current Page Highlight */
+    font-weight: normal;
+
+    box-shadow: inset 0 3px 0 0 blue;
+  }
+
+  .banner-title h1 {
+    font-size: 48px;
+
+    margin-top: 2rem;
+    margin-left: 2rem;
+  }
+
+  .banner-title p {
+    margin-left: 2rem;
+  }
+
+  .card {
+    margin: 2rem
+  }
+
+  .footer-area {
+    /* Footer Main Flexbox */
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    max-width: 800px;
+
+    margin: auto;
+  }
+
+  .footer-logo-name p {
+    /* Footer Team Name Styling */
+    width: 12ch;
+  }
+}
