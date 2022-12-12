@@ -8,24 +8,37 @@ defineProps({
   <section class="product">
     <img :src="flwrInf.imgLink" :alt="flwrInf.name">
     <h3>{{ flwrInf.name }}</h3>
-    <p>{{ flwrInf.description }}</p>
-    <p>${{ flwrInf.price }}</p>
+    <p class="description">{{ flwrInf.description }}</p>
+    <p class="price">${{ flwrInf.price }}</p>
   </section>
 </template>
 
 <style scoped>
 .product {
-  border: 2px solid black;
-  color:red
+  margin-top: 2.5rem;
+  padding: 0 1.5rem;
+}
+.product h3 {
+  padding-top: 0.5rem;
 }
 
+.description {
+  padding-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: bold;
+}
+
+
 .product img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
+  width: 80%;
+  max-width: 100%;
+  /* object-fit: cover; */
+  border: 1px solid black;
 }
 
 h3, p {
-  padding: 0 1rem;
+  margin: 0;
 }
 </style>

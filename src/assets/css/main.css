@@ -119,9 +119,13 @@ a, a:visited {
   transition: all 0.3s ease-out;
 }
 
-.header-nav.open {
+.open {
   /* Header Navigation Links Open State */
-  max-height: 20rem;
+  display: block;
+}
+
+.close {
+  display: none;
 }
 
 .header-nav a {
@@ -374,6 +378,7 @@ footer {
 
   .secondary-nav ul {
     margin-bottom: 0;
+    margin-top: 0;
     flex-direction: row;
     gap: 20px;
   }

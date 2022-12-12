@@ -50,12 +50,14 @@ const array = [
 .mainCont {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .productCont {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 @media only screen and (min-width: 45rem) {

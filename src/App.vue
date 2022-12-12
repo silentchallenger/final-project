@@ -1,24 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import { ref } from "vue";
 
-(function(){
-  $('a').each(function() {
-    if ($(this).prop('href') == window.location.href) {
-      $(this).addClass('active-page');
-    }
-  });
-});
+const showMenu = ref(false)
+const menuToggle = () => (showMenu.value = !showMenu.value)
 
-(function() {
-  var $menu = $("#menu"),
-  $menulink = $(".header-menu-link");
-  
-  $menulink.click(function() {
-    $menulink.toggleClass("open");
-    $menu.toggleClass("open");
-    return false;
-  });
-});
 </script>
 
 <template>
@@ -33,12 +19,12 @@ import { RouterLink, RouterView } from "vue-router";
           </a>
           <div class="cart-menu">
           <RouterLink to="/cart" class="cart"><img src="../src/assets/logos/cart.png" alt="Cart"></RouterLink>
-          <button class="header-menu-link">
+          <button class="header-menu-link" @click.prevent="menuToggle">
             <img src="../src/assets/logos/menu.png" alt="Menu">
           </button>
         </div>
         </div>
-        <nav class="header-nav" id="menu">
+        <nav class="header-nav" :class="showMenu ? 'open' : 'close'">
           <ul>
             <li><RouterLink to="/">Shop</RouterLink></li>
             <li><RouterLink to="/about">About</RouterLink></li>
