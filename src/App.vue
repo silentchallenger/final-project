@@ -24,12 +24,19 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <div class="body">
     <header>
-      <section class="header-area">
+      <!-- Start Mobile Header -->
+      <section class="header-area-mobile">
         <div class="header-menu-bar">
-          <img src="../src/assets/logos/bouquet.svg" alt="Lily's Garden">  
-          <a href="./" class="header-logo-name">
+          <a href="./" class="header-logo-name-mobile">
+            <img src="../src/assets/logos/bouquet.svg" alt="Lily's Garden">
             <p>Lily's Garden</p>
           </a>
+          <div class="cart-menu">
+          <RouterLink to="/cart" class="cart"><img src="../src/assets/logos/cart.png" alt="Cart"></RouterLink>
+          <button class="header-menu-link">
+            <img src="../src/assets/logos/menu.png" alt="Menu">
+          </button>
+        </div>
         </div>
         <nav class="header-nav" id="menu">
           <ul>
@@ -38,30 +45,37 @@ import { RouterLink, RouterView } from "vue-router";
             <li><RouterLink to="/contact">Contact Us</RouterLink></li>
           </ul>
         </nav>
+      </section>
+      <!-- End Mobile Header -->
+      <!-- Start Desktop Header -->
+      <section class="header-area-desktop">
+        <div class="header-menu-bar">
+          <a href="./" class="header-logo-name-desktop">
+            <img src="../src/assets/logos/bouquet.svg" alt="Lily's Garden">
+            <p>Lily's Garden</p>
+          </a>
+        </div>
+        <nav class="header-nav">
+          <ul>
+            <li><RouterLink to="/">Shop</RouterLink></li>
+            <li><RouterLink to="/about">About</RouterLink></li>
+            <li><RouterLink to="/contact">Contact Us</RouterLink></li>
+          </ul>
+        </nav>
         <div class="">
-          <button class="header-menu-link">
-            <div class="icon">
-              Menu
-            </div>
-          </button>
-          <RouterLink to="/cart" class="cart">Cart</RouterLink>
+          <RouterLink to="/cart" class="cart"><img src="../src/assets/logos/cart.png" alt="Cart"></RouterLink>
         </div>
       </section>
+      <!-- End Desktop Header -->
     </header>
 
     <RouterView />
 
     <footer>
       <div class="footer-area">
-        <div class="bottom-socials">
-          <div class="footer-logo-name">
-            <img src="../src/assets/logos/bouquet.svg" alt="Lily's Garden">
-            <p>Lily's Garden</p>
-          </div>
-          <div class="social-logos">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-          </div>
+        <div class="footer-logo-name">
+          <img src="../src/assets/logos/bouquet.svg" alt="Lily's Garden">
+          <p>Lily's Garden</p>
         </div>
         <nav class="secondary-nav">
           <ul>
@@ -73,7 +87,7 @@ import { RouterLink, RouterView } from "vue-router";
           </ul>
         </nav>
       </div>
-      <p>Copyright &copy; 2022 Lily's Garden. All rights reserved.</p>
+      <p class="copyright">Copyright &copy; 2022 Lily's Garden. All rights reserved.</p>
     </footer>
   </div>
 </template>

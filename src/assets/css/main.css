@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
 
   font-family: 'Roboto', 'Arial', sans-serif;
-  font-size: clamp(16px, 2vw, 18px);
+  font-size: 18px;
   line-height: 1.5;
 
   margin: 0;
@@ -28,12 +28,25 @@ a, a:visited {
   color: black;
 }
 
-.header-area {
+.header-area-mobile {
   /* Header Logo-Nav Main Flexbox */
   display: flex;
   flex-direction: column;
 
   text-align: center;
+
+  background-color: white;
+  color: black;
+}
+
+.header-area-desktop {
+  /* Header Logo-Nav Main Flexbox */
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  max-width: 1200px;
 
   background-color: white;
   color: black;
@@ -48,7 +61,7 @@ a, a:visited {
 
 .header-menu-link {
   /* Hamburger Menu Icon */
-  padding: 1.5rem;
+  padding: 0.75rem 0.5rem;
 
   transition-duration: 0.5s;
 
@@ -58,27 +71,44 @@ a, a:visited {
   border: none;
 }
 
-.cart {
-  padding: 1rem;
+.cart-menu {
+  display: flex;
+  align-items: center;
 }
 
-.header-logo-name {
+.cart {
+  padding: 0.75rem 0.5rem;
+}
+
+.header-logo-name-mobile {
+  /* Header Team Name/Logo Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-logo-name-desktop {
   /* Header Team Name/Logo Flexbox */
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-.header-logo-name p {
+.header-logo-name-mobile p {
   /* Header Team Name Styling */
   font-family: 'Oleo Script Swash Caps', cursive;
-  font-size: 20px;
+  font-size: 26px;
   color: black;
+
+  margin-bottom: 0;
+  width: 9ch;
 }
 
-.header-logo-name img {
-  /* Header Logo Styling */
-  max-width: 30px;
+.header-logo-name-desktop p {
+  /* Header Team Name Styling */
+  font-family: 'Oleo Script Swash Caps', cursive;
+  margin: auto;
+  font-size: 32px;
 }
 
 .header-nav {
@@ -95,6 +125,14 @@ a, a:visited {
 }
 
 .header-nav a {
+  /* Header Nav Button Styling */
+  display: block;
+  padding: 2rem 1rem;
+
+  color: black;
+}
+
+.header-area-mobile .header-nav a {
   /* Header Nav Button Styling */
   display: block;
   padding: 1rem;
@@ -211,13 +249,12 @@ footer {
   background-color: white;
 }
 
-footer p {
+.copyright {
   /* Copyright Text Styling */
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 16px;
   text-align: center;
 
-  padding: 0.5rem;
+  margin-top: 1rem;
 
   color: black;
 }
@@ -230,31 +267,20 @@ footer p {
   text-align: center;
 }
 
-.bottom-socials {
-  /* Bottom Logo and Socials Flexbox */
-  display: flex;
-  flex-direction: column;
-}
-
 .footer-logo-name {
   /* Bottom Website Title Styling */
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin: 1rem;
 }
 
 .footer-logo-name p {
   font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 24px;
+
   margin-bottom: 0;
-}
-
-.fa {
-  /* Social Button Links */
-  width: 25px;
-}
-
-.fa:hover {
-  opacity: 0.7;
 }
 
 .secondary-nav a {
@@ -267,11 +293,11 @@ footer p {
   /* Secondary Navigation Styling */
   list-style: none;
   padding-left: 0px;
+  margin: 1rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .secondary-nav ul li:hover {
@@ -281,27 +307,13 @@ footer p {
 }
 
 @media only screen and (min-width: 45rem) {
-  .header-area {
+  .header-area-desktop {
     /* Header Logo-Nav Main Flexbox */
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: auto;
-    max-width: 1200px;
+    display: flex;
   }
 
-  .header-menu-bar {
-    gap: 10px;
-  }
-
-  .header-logo-name p {
-    /* Header Team Name Styling */
-    margin: auto;
-    font-size: 32px;
-  }
-
-  .header-menu-link {
-    /* Hamburger Menu Icon */
+  .header-area-mobile {
+    /* Header Logo-Nav Main Flexbox */
     display: none;
   }
 
@@ -352,7 +364,6 @@ footer p {
 
   .footer-area {
     /* Footer Main Flexbox */
-    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
 
