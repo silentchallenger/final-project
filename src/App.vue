@@ -26,6 +26,7 @@ import { RouterLink, RouterView } from "vue-router";
     <header>
       <section class="header-area">
         <div class="header-menu-bar">
+          <img src="../src/assets/logos/bouquet.svg" alt="Lily's Garden">  
           <a href="./" class="header-logo-name">
             <p>Lily's Garden</p>
           </a>
@@ -54,6 +55,7 @@ import { RouterLink, RouterView } from "vue-router";
       <div class="footer-area">
         <div class="bottom-socials">
           <div class="bottom-logo-title">
+            <img src="../src/assets/logos/bouquet.svg" alt="Lily's Garden">
             <p>Lily's Garden</p>
           </div>
           <div class="social-logos">
@@ -67,6 +69,7 @@ import { RouterLink, RouterView } from "vue-router";
             <li><RouterLink to="/about" class="">About</RouterLink></li>
             <li><RouterLink to="/contact" class="">Contact Us</RouterLink></li>
             <li><RouterLink to="/terms" class="">Terms and Services</RouterLink></li>
+            <li><RouterLink to="/policy" class="">Privacy Policy</RouterLink></li>
           </ul>
         </nav>
       </div>

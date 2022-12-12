@@ -67,8 +67,6 @@ a, a:visited {
   display: flex;
   justify-content: center;
   gap: 10px;
-
-  padding-left: 1rem;
 }
 
 .header-logo-name p {
@@ -293,7 +291,7 @@ footer p {
 
   .header-logo-name {
     /* Header Team Name and Logo Flexbox */
-    padding-left: 1rem;
+    
   }
 
   .header-logo-name p {
