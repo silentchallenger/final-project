@@ -54,7 +54,7 @@ import { RouterLink, RouterView } from "vue-router";
     <footer>
       <div class="footer-area">
         <div class="bottom-socials">
-          <div class="bottom-logo-title">
+          <div class="footer-logo-name">
             <img src="../src/assets/logos/bouquet.svg" alt="Lily's Garden">
             <p>Lily's Garden</p>
           </div>
@@ -77,3 +77,8 @@ import { RouterLink, RouterView } from "vue-router";
     </footer>
   </div>
 </template>
+
+
+<style> 
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+</style>

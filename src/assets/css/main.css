@@ -71,8 +71,8 @@ a, a:visited {
 
 .header-logo-name p {
   /* Header Team Name Styling */
+  font-family: 'Oleo Script Swash Caps', cursive;
   font-size: 20px;
-  width: 12ch;
   color: black;
 }
 
@@ -236,14 +236,15 @@ footer p {
   flex-direction: column;
 }
 
-.bottom-logo-title {
+.footer-logo-name {
   /* Bottom Website Title Styling */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.bottom-logo-title p {
+.footer-logo-name p {
+  font-family: 'Oleo Script Swash Caps', cursive;
   margin-bottom: 0;
 }
 
@@ -289,14 +290,14 @@ footer p {
     max-width: 1200px;
   }
 
-  .header-logo-name {
-    /* Header Team Name and Logo Flexbox */
-    
+  .header-menu-bar {
+    gap: 10px;
   }
 
   .header-logo-name p {
     /* Header Team Name Styling */
     margin: auto;
+    font-size: 32px;
   }
 
   .header-menu-link {
@@ -368,7 +369,7 @@ footer p {
 
   .footer-logo-name p {
     /* Footer Team Name Styling */
-    width: 12ch;
+    font-size: 26px;
     margin-bottom: 0;
   }
 }
