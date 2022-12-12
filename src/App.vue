@@ -27,21 +27,24 @@ import { RouterLink, RouterView } from "vue-router";
       <section class="header-area">
         <div class="header-menu-bar">
           <a href="./" class="header-logo-name">
-            <p>Flower Shop</p>
+            <p>Lily's Garden</p>
           </a>
+        </div>
+        <nav class="header-nav" id="menu">
+          <ul>
+            <li><RouterLink to="/">Shop</RouterLink></li>
+            <li><RouterLink to="/about">About</RouterLink></li>
+            <li><RouterLink to="/contact">Contact Us</RouterLink></li>
+          </ul>
+        </nav>
+        <div class="">
           <button class="header-menu-link">
             <div class="icon">
               Menu
             </div>
           </button>
+          <RouterLink to="/cart" class="cart">Cart</RouterLink>
         </div>
-        <nav class="header-nav" id="menu">
-          <ul>
-            <li><RouterLink to="/" class="">Home</RouterLink></li>
-            <li><RouterLink to="/about" class="">About</RouterLink></li>
-            <li><RouterLink to="/contact" class="">Contact Us</RouterLink></li>
-        </ul>
-        </nav>
       </section>
     </header>
 
@@ -51,7 +54,7 @@ import { RouterLink, RouterView } from "vue-router";
       <div class="footer-area">
         <div class="bottom-socials">
           <div class="bottom-logo-title">
-            <p>Flower Shop</p>
+            <p>Lily's Garden</p>
           </div>
           <div class="social-logos">
             <a href="#" class="fa fa-facebook"></a>
@@ -60,13 +63,14 @@ import { RouterLink, RouterView } from "vue-router";
         </div>
         <nav class="secondary-nav">
           <ul>
-            <li><RouterLink to="/" class="">Home</RouterLink></li>
+            <li><RouterLink to="/" class="">Shop</RouterLink></li>
             <li><RouterLink to="/about" class="">About</RouterLink></li>
             <li><RouterLink to="/contact" class="">Contact Us</RouterLink></li>
+            <li><RouterLink to="/terms" class="">Terms and Services</RouterLink></li>
           </ul>
         </nav>
       </div>
-      <p>Copyright &copy; 2022 Flower Shop. All rights reserved.</p>
+      <p>Copyright &copy; 2022 Lily's Garden. All rights reserved.</p>
     </footer>
   </div>
 </template>
