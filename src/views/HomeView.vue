@@ -7,22 +7,64 @@ const array = [
     name: "Tulip",
     description: "Yellow, White Flower",
     price: 5,
-    imgLink: "../src/assets/images/1.jpg"
+    imgLink: "../src/assets/images/1.png"
   },
   {
     id: 2,
     name: "Rose",
     description: "Red Flower",
     price: 15,
-    imgLink: "../src/assets/images/2.jpg"
+    imgLink: "../src/assets/images/2.png"
   },
   {
     id: 3,
     name: "Carnation",
     description: "Red Flower",
     price: 10,
-    imgLink: "../src/assets/images/3.jpg"
+    imgLink: "../src/assets/images/3.png"
   },
+  {
+    id: 4,
+    name: "Carnation",
+    description: "Red Flower",
+    price: 10,
+    imgLink: "../src/assets/images/4.png"
+  },
+  {
+    id: 5,
+    name: "Carnation",
+    description: "Red Flower",
+    price: 10,
+    imgLink: "../src/assets/images/5.png"
+  },
+  {
+    id: 6,
+    name: "Carnation",
+    description: "Red Flower",
+    price: 10,
+    imgLink: "../src/assets/images/6.png"
+  },
+  {
+    id: 7,
+    name: "Carnation",
+    description: "Red Flower",
+    price: 10,
+    imgLink: "../src/assets/images/7.png"
+  },
+  {
+    id: 8,
+    name: "Carnation",
+    description: "Red Flower",
+    price: 10,
+    imgLink: "../src/assets/images/8.png"
+  },
+  {
+    id: 9,
+    name: "Carnation",
+    description: "Red Flower",
+    price: 10,
+    imgLink: "../src/assets/images/9.png"
+  }
 ]
 </script>
 
@@ -31,7 +73,7 @@ const array = [
     <div class="banner-content">
       <h1>Nice gifts</h1>
       <p>Open your eyes to these beautiful flowers.</p>
-      <div class="card">
+      <div class="cta">
         <a href="/" target="_blank" class="cta-text">Shop Now!</a>
       </div>
     </div>
@@ -45,25 +87,3 @@ const array = [
     </section>
   </main>
 </template>
-
-<style>
-.mainCont {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.productCont {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-@media only screen and (min-width: 45rem) {
-  .productCont {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-</style>

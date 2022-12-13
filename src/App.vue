@@ -2,9 +2,15 @@
 import { RouterLink, RouterView } from "vue-router";
 import { ref } from "vue";
 
+import { useRouter } from "vue-router";
+const router = useRouter();
+
 const showMenu = ref(false)
 const menuToggle = () => (showMenu.value = !showMenu.value)
 
+router.afterEach((to, from) => { 
+  showMenu.value = false
+});
 </script>
 
 <template>
