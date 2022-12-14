@@ -34,6 +34,11 @@ const router = createRouter({
       name: "policy",
       component: () => import("../views/PolicyView.vue"),
     },
+    {
+      path: "/checkout",
+      name: "checkout",
+      component: () => import("../views/CheckoutView.vue"),
+    },
   ],
 });
 

@@ -2,9 +2,23 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
-## Recommended IDE Setup
+## Attributions
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Image 1](https://pixabay.com/photos/tulip-vase-yellow-spring-blossoms-3264830/)
+- [Image 2 and 3](https://pixabay.com/photos/bouquet-a-vase-with-a-flower-vase-3912009/)
+- [Image 4](https://pixabay.com/photos/bouquet-white-cosmea-flowers-pink-4530751/)
+- [Image 5](https://pixabay.com/photos/tulips-flowers-vase-arrangement-2530865/)
+- [Image 6](https://pixabay.com/photos/flowers-vase-spring-arrangement-2682120/)
+- [Image 7](https://pixabay.com/photos/flowers-arrangement-colorful-spring-2470320/)
+- [Image 8](https://unsplash.com/photos/LrAsfltinp0)
+- [Image 9](https://pixabay.com/photos/tulip-tulip-bouquet-spring-flower-1230390/)
+- [Image 10](https://unsplash.com/photos/nbTn0tq5bKs)
+- [Image 11](https://pixabay.com/photos/dutch-iris-blue-flowers-vase-bulbs-2747701/)
+- [Image 12](https://pixabay.com/photos/flowers-vase-spring-arrangement-2682595/)
+
+
+
+
 
 ## Customize configuration
 

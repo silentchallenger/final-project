@@ -1,5 +1,7 @@
 @import "reboot.min.css";
+/* @import "pico.classless.min.css"; */
 
+/* 7i1FhTMzjpCbw0zs */
 /* Start General Styling */
 
 body {
@@ -70,7 +72,7 @@ a, a:visited {
   color: black;
 }
 
-.router-link-exact-active {
+li .router-link-exact-active {
   font-weight: bold;
 }
 
@@ -119,6 +121,7 @@ a, a:visited {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: 0.5rem;
 }
 
 .header-logo-name-mobile p {
@@ -185,6 +188,11 @@ a, a:visited {
 }
 /* End Desktop Header Styling */
 /* Start Banner Styling */
+.banner-content {
+  width: 100%;
+  margin: auto;
+}
+
 .banner-title {
   /* Hero Section Styling */
   display: flex;
@@ -227,7 +235,7 @@ a, a:visited {
 
 .cta {
   /* Button Container */
-  max-width: 30ch;
+  max-width: 15ch;
   margin: 1rem;
 
   background-color: white;
@@ -350,6 +358,7 @@ a, a:visited {
 .priceaddcart {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 
@@ -375,7 +384,59 @@ h3, p {
   }
 }
 /* End Product Card Styling */
+/* Start Contact Page Styling */
 
+.contact-form form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.contact-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-info, .contact-form {
+    padding: 2rem;
+}
+
+.contact-form input {
+  width: 48%;
+  margin-bottom: 1rem;
+}
+
+.contact-form textarea {
+  margin-bottom: 1rem;
+
+  width: 100%
+}
+
+.contact-form button {
+  width: 33.33%;
+}
+
+@media only screen and (min-width: 576px) {
+  .contact-container {
+    flex-direction: row;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .contact-info, .contact-form {
+    width: 50%;
+  }
+}
+/* End Contact Page Styling */
+/* Start General Media Quaries */
 @media only screen and (min-width: 576px) {
   .header-area-desktop {
     /* Header Logo-Nav Main Flexbox */
@@ -399,9 +460,7 @@ h3, p {
   }
 
   .banner-content {
-    width: 100%;
     max-width: 1200px;
-    margin: auto;
   }
 
   .banner-title h1 {
@@ -412,6 +471,10 @@ h3, p {
   }
 
   .banner-title p {
+    margin-left: 2rem;
+  }
+
+  .cta {
     margin-left: 2rem;
   }
 
@@ -442,3 +505,4 @@ h3, p {
     margin-bottom: 0;
   }
 }
+/* End General Media Quaries */

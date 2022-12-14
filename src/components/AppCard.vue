@@ -1,17 +1,21 @@
 <script setup>
 defineProps({
-  flwrInf: Object
+  item: Object,
+  addItem: Function
 })
 </script>
 
 <template>
   <section class="product">
-    <img :src="flwrInf.imgLink" :alt="flwrInf.name">
-    <h3>{{ flwrInf.name }}</h3>
-    <p class="description">{{ flwrInf.description }}</p>
+    <img :src="item.imgLink" :alt="item.name">
+    <h3>{{ item.name }}</h3>
+    <p class="description">{{ item.description }}</p>
     <div class="priceaddcart">
-      <p class="price">${{ flwrInf.price }}</p>
-      <button class="addtocart">Add to Cart</button>
+      <p class="price">${{ item.price }}</p>
+      <button class="addtocart" @click="addItem(item)">Add to Cart</button>
     </div>
   </section>
 </template>
+
+<style>
+</style>
