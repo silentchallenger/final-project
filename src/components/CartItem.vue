@@ -13,9 +13,9 @@ defineProps({
     <td>{{ item.name }}</td>
     <td>${{ item.price }}</td>
     <td>
-      <button @click="item.quantity--" :disabled="item.quantity == 1">-</button>
-      <input style="width: 30%;" type="text" v-model="item.quantity" readonly>
-      <button @click="item.quantity++" :disabled="item.quantity == 6">+</button>
+      <button @click="item.quantity--" :disabled="item.quantity == 1" style="width: 25px">-</button>
+      <input style="width: 20%; text-align: center;" type="text" v-model="item.quantity" readonly>
+      <button @click="item.quantity++" :disabled="item.quantity == 6" style="width: 25px">+</button>
     </td>
     <td>${{ item.price * item.quantity }}</td>
     <td>

@@ -1,8 +1,8 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink, RouterView, useRouter } from "vue-router";
 import { ref } from "vue";
+import { useToast } from "vue-toastification";
 
-import { useRouter } from "vue-router";
 const router = useRouter();
 
 const showMenu = ref(false)
@@ -103,6 +103,7 @@ const cartItems = ref([])
 
 function removeItem(id) {
   cartItems.value = cartItems.value.filter((i) => i.id !== id)
+  toast.error('Item removed from cart')
 }
 
 function addItem(item) {
@@ -110,20 +111,18 @@ function addItem(item) {
   if (foundItem) {
     if (foundItem.quantity < 6) {
       foundItem.quantity++
+      toast('Item added to cart')
+    } else {
+      toast.error('Maximum quantity reached')
     }
   } else {
     cartItems.value.push({...item, quantity: 1})
+    toast('Item added to cart')
   }
 }
 
-// function addItem(item) {
-//   const foundItem = cartItems.value.find(i => i.id === item.id)
-//   if (foundItem) {
-//     foundItem.quantity++
-//   } else {
-//     cartItems.value.push({...item, quantity: 1})
-//   }
-// }
+const toast = useToast();
+
 </script>
 
 <template>
