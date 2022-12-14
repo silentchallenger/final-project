@@ -18,84 +18,84 @@ const array = [
     name: "Tulip",
     description: "Nice for decoration",
     price: 5,
-    imgLink: "../src/assets/images/1.png"
+    imgLink: new URL("../src/assets/images/1.png", import.meta.url)
   },
   {
     id: 2,
     name: "Rose",
     description: "Colorful roses that will make you happy",
     price: 15,
-    imgLink: "../src/assets/images/2.png"
+    imgLink: new URL("../src/assets/images/2.png", import.meta.url)
   },
   {
     id: 3,
     name: "Cosmos",
     description: "Pink and white cosmoses for your table",
     price: 10,
-    imgLink: "../src/assets/images/3.png"
+    imgLink: new URL("../src/assets/images/3.png", import.meta.url)
   },
   {
     id: 4,
     name: "Rose",
     description: "Nice bouquet for your beloved one",
     price: 10,
-    imgLink: "../src/assets/images/4.png"
+    imgLink: new URL("../src/assets/images/4.png", import.meta.url)
   },
   {
     id: 5,
     name: "Mixed",
     description: "Different flower mixed for new feelings",
     price: 10,
-    imgLink: "../src/assets/images/5.png"
+    imgLink: new URL("../src/assets/images/5.png", import.meta.url)
   },
   {
     id: 6,
     name: "Mixed",
     description: "Classic flower arrangement from 90s",
     price: 10,
-    imgLink: "../src/assets/images/6.png"
+    imgLink: new URL("../src/assets/images/6.png", import.meta.url)
   },
   {
     id: 7,
     name: "Tulip",
     description: "White tulips that breathes new air",
     price: 10,
-    imgLink: "../src/assets/images/7.png"
+    imgLink: new URL("../src/assets/images/7.png", import.meta.url)
   },
   {
     id: 8,
     name: "Tulip",
     description: "Purple and white tulips for your bedroom",
     price: 10,
-    imgLink: "../src/assets/images/8.png"
+    imgLink: new URL("../src/assets/images/8.png", import.meta.url)
   },
   {
     id: 9,
     name: "Rose",
     description: "White rose that suits for special occasions",
     price: 10,
-    imgLink: "../src/assets/images/9.png"
+    imgLink: new URL("../src/assets/images/9.png", import.meta.url)
   },
   {
     id: 10,
     name: "Tulip",
     description: "Mixed tulips for your dinner table",
     price: 10,
-    imgLink: "../src/assets/images/10.png"
+    imgLink: new URL("../src/assets/images/10.png", import.meta.url)
   },
   {
     id: 11,
     name: "Dutch Iris",
     description: "Beautiful blue flowers",
     price: 10,
-    imgLink: "../src/assets/images/11.png"
+    imgLink: new URL("../src/assets/images/11.png", import.meta.url)
   },
   {
     id: 12,
     name: "Mixed",
     description: "Mixed arrangements for your house",
     price: 10,
-    imgLink: "../src/assets/images/12.png"
+    imgLink: new URL("../src/assets/images/12.png", import.meta.url)
   }
 ]
 
