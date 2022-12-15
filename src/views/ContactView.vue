@@ -1,4 +1,41 @@
 <script setup>
+import { ref } from 'vue';
+import { useToast } from "vue-toastification";
+import firebaseApp from "../firebase";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+
+const db = getFirestore(firebaseApp)
+
+const contactRequest = ref({
+  firstName: "",
+  lastName: "",
+  phone: "",
+  email: "",
+  subject: "",
+  message: ""
+})
+
+const toast = useToast();
+
+const isSubmitting = ref(false);
+
+async function contactSend () {
+  isSubmitting.value = true
+  try {
+    await addDoc(collection(db, 'contact_requests'), contactRequest.value);
+    toast.success('Your request is submitted')
+    contactRequest.value.firstName = ""
+    contactRequest.value.lastName = ""
+    contactRequest.value.phone = ""
+    contactRequest.value.email = ""
+    contactRequest.value.subject = ""
+    contactRequest.value.message = ""
+  } catch(e) {
+    toast.error('Error while submitting: ' + e )
+  }
+  isSubmitting.value = false
+}
+
 </script>
 
 <template>
@@ -7,14 +44,15 @@
       <h1>Contact Us</h1>
       <div class="contact-container">
         <div class="contact-form">
-          <form action="">
-            <!-- Send request vb. yazi yaz -->
-            <input name="first_name" placeholder="Name *" type="text" required>
-            <input name="phone" placeholder="Phone *" type="text" required>
-            <input name="email_address" placeholder="Email *" type="text" required>
-            <input name="contact_subject" placeholder="Subject *" type="text" required>
-            <textarea placeholder="Message *" name="message" class="form-control2" required></textarea>
-            <button @submit.prevent="">Send</button>
+          <p>Send your request</p>
+          <form action="" @submit.prevent="contactSend">
+            <input name="first_name" placeholder="First Name *" type="text" v-model="contactRequest.firstName" required>
+            <input name="last_name" placeholder="Last Name *" type="text" v-model="contactRequest.lastName" required>
+            <input name="phone" placeholder="Phone *" type="text" v-model="contactRequest.phone" required>
+            <input name="email" placeholder="Email *" type="text" v-model="contactRequest.email" required>
+            <input name="subject" placeholder="Subject *" type="text" v-model="contactRequest.subject" required>
+            <textarea placeholder="Message *" name="message" rows="8" class="form-control2" v-model="contactRequest.message" required></textarea>
+            <button :disabled="isSubmitting">{{ isSubmitting ? "Submitting" : "Send" }}</button>
           </form>
         </div>
         <div class="contact-info">

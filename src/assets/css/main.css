@@ -436,9 +436,19 @@ h3, p {
     padding: 2rem;
 }
 
+.contact-form p {
+  padding: 1rem 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .contact-form input {
   width: 48%;
   margin-bottom: 1rem;
+}
+
+.contact-form input[name=subject] {
+  width: 100%;
 }
 
 .contact-form textarea {

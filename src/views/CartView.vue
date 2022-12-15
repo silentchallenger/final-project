@@ -21,7 +21,7 @@ const totalPrice = computed(() => {
   <main>
     <div class="cart-page">
       <h2>Cart</h2>
-      <div  v-if="cartItems.length > 0">
+      <div v-if="cartItems.length> 0">
         <table >
           <thead>
             <tr>
