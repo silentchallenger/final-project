@@ -1,8 +1,11 @@
 <script setup>
+import { useCartStore } from '../stores/cart'
+
 defineProps({
   item: Object,
-  removeItem: Function
 })
+
+const cartStore = useCartStore();
 </script>
 
 <template>
@@ -19,7 +22,7 @@ defineProps({
     </td>
     <td>${{ item.price * item.quantity }}</td>
     <td>
-      <button @click="removeItem(item.id)">
+      <button @click="cartStore.removeItem(item.id)">
         <img src="../assets/logos/remove.png" alt="Remove">
       </button>
     </td>

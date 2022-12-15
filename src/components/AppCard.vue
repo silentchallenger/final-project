@@ -1,8 +1,11 @@
 <script setup>
+import { useCartStore } from '../stores/cart'
+
 defineProps({
-  item: Object,
-  addItem: Function
+  item: Object
 })
+
+const cartStore = useCartStore();
 </script>
 
 <template>
@@ -12,7 +15,7 @@ defineProps({
     <p class="description">{{ item.description }}</p>
     <div class="priceaddcart">
       <p class="price">${{ item.price }}</p>
-      <button class="addtocart" @click="addItem(item)">Add to Cart</button>
+      <button class="addtocart" @click="cartStore.addItem(item)">Add to Cart</button>
     </div>
   </section>
 </template>

@@ -2,26 +2,24 @@
 import CartItem from '../components/CartItem.vue';
 import { RouterLink, RouterView } from "vue-router";
 import { computed } from 'vue';
-
-const props = defineProps({
-  cartItems: Object,
-  removeItem: Function
-})
+import { useCartStore } from '../stores/cart'
 
 const totalPrice = computed(() => {
   let cartSum = 0;
-  for (let i = 0; i < props.cartItems.length; i++) {
-    cartSum = cartSum + props.cartItems[i].price * props.cartItems[i].quantity
+  for (let i = 0; i < cartStore.items.length; i++) {
+    cartSum = cartSum + cartStore.items[i].price * cartStore.items[i].quantity
   }
   return cartSum;
 })
+
+const cartStore = useCartStore();
 </script>
 
 <template>
   <main>
     <div class="cart-page">
       <h2>Cart</h2>
-      <div v-if="cartItems.length> 0">
+      <div v-if="cartStore.items.length> 0">
         <table >
           <thead>
             <tr>
@@ -34,7 +32,7 @@ const totalPrice = computed(() => {
             </tr>
           </thead>
           <tbody>
-            <CartItem v-for="row in cartItems" :key="row.id" :item="row" :removeItem="removeItem"/>
+            <CartItem v-for="row in cartStore.items" :key="row.id" :item="row"/>
           </tbody>
         </table>
         <div>
