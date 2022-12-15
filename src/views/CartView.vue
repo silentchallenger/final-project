@@ -2,7 +2,7 @@
 import CartItem from '../components/CartItem.vue';
 import { RouterLink, RouterView } from "vue-router";
 import { computed } from 'vue';
-import { useCartStore } from '../stores/cart'
+import { useCartStore } from '../stores/cart';
 
 const totalPrice = computed(() => {
   let cartSum = 0;

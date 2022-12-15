@@ -21,6 +21,13 @@ footer {
   background-color: white;
 }
 
+.policyContainer {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 1200px;
+}
+
 .body {
   /* Base Styles and Layout */
   display: flex;
