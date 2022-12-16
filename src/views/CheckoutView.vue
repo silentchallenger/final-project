@@ -136,98 +136,15 @@ async function orderSend () {
             </tr>
           </tbody>
         </table>
+        <div class="payment-cont">
+          <h3>Payment Method</h3>
+          <div class="method-cont">
+            <input type="radio" id="cashon" name="paymentmethod" value="cash" checked>
+            <label for="cashon">Cash On Delivery</label>
+          </div>
+        </div>
         <button type="submit" class="submit-btn btn" form="billing-form" :disabled="isSubmitting">{{ isSubmitting ? "Submitting" : "Place Order" }}</button>
       </div>
     </div>
   </main>
 </template>
-
-<style>
-.checkout-cont {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.billing-cont, .order-cont {
-  padding: 1rem;
-  width: 100%;
-}
-
-.checkout-cont h2 {
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
-}
-
-.billing-form div {
-  width: 100%;
-}
-
-.billing-form .name {
-  width: 48%;
-}
-
-.billing-form input {
-  padding: 0.5rem;
-  width: 100%;
-
-  background-color: #f7f7f7;
-  border: 1px solid #ccc;
-  color: #555;
-}
-
-.billing-form input:active, .billing-form input:focus {
-  outline: none;
-  border-color: #CC2121;
-  background-color: #fff;
-}
-
-.billing-form label {
-  display: block;
-  margin-top: 1rem;
-}
-
-.order-cont table {
-  background-color: #f7f7f7;
-  width: 100%;
-
-  margin-top: 2rem;
-}
-
-.order-cont table, th, td {
-  border: 1px solid #ebebeb;
-  text-align: center;
-}
-
-.order-cont table tr {
-  width: 100%;
-  height: 50px;
-}
-
-.name-fields {
-  display: flex;
-  justify-content: space-between;
-}
-
-
-
-.submit-btn {
-  color: #fff;
-  border-radius: 0;
-  text-transform: capitalize;
-  background-color: #CC2121;
-  outline: none;
-
-  padding: 10px 20px;
-  margin-top: 1rem;
-}
-
-@media only screen and (min-width: 992px) {
-  .checkout-cont {
-  flex-direction: row;
-}
-}
-
-</style>

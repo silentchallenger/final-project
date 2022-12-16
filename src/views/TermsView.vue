@@ -35,7 +35,7 @@
       <p><strong>Third-party Social Media Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</p>
       </li>
       <li>
-      <p><strong>Website</strong> refers to Lily's Garden, accessible from <a href="lilysgarden.com" rel="external nofollow noopener" target="_blank">lilysgarden.com</a></p>
+      <p><strong>Website</strong> refers to Lily's Garden, accessible from <a href="lilysgarden.shop" rel="external nofollow noopener" target="_blank">lilysgarden.shop</a></p>
       </li>
       <li>
       <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
@@ -84,7 +84,7 @@
       <h1>Contact Us</h1>
       <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
       <ul>
-      <li>By email: info@lilysgarden.com</li>
+      <li>By email: info@lilysgarden.shop</li>
       </ul>
     </div>
   </main>

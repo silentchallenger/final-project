@@ -19,64 +19,48 @@ const cartStore = useCartStore();
   <main>
     <div class="cart-page">
       <h2>Cart</h2>
-      <div v-if="cartStore.items.length> 0">
+      <div v-if="cartStore.items.length > 0">
         <table>
           <thead>
             <tr>
               <th style="width: 15%">Picture</th>
-              <th style="width: 25%">Product</th>
+              <th style="width: 20%">Product</th>
               <th style="width: 15%">Price</th>
-              <th style="width: 15%">Quantity</th>
+              <th style="width: 25%">Quantity</th>
               <th style="width: 15%">Total</th>
-              <th style="width: 15%">Remove</th>
+              <th style="width: 10%">Remove</th>
             </tr>
           </thead>
           <tbody>
             <CartItem v-for="row in cartStore.items" :key="row.id" :item="row"/>
           </tbody>
         </table>
-        <div>
-          <p>{{ totalPrice }}</p>
-          <RouterLink to="/checkout" class="checkout-btn btn">Proceed To Checkout</RouterLink>
+        <div class="cart-order">
+          <table class="order-table">
+            <thead>
+              <tr>
+                <th colspan="3">Cart Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="2" style="font-weight: bold;">Sub Total</td>
+                <td>${{ totalPrice }}</td>
+              </tr>
+              <tr>
+                <td colspan="2">Free Shipping</td>
+                <td>$0</td>
+              </tr>
+              <tr>
+                <td colspan="2">Total</td>
+                <td>${{ totalPrice}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <RouterLink to="/checkout" class="checkout-btn btn">Proceed To Checkout</RouterLink>
       </div>
       <p v-else>Your cart is empty</p>
     </div>
   </main>
 </template>
-
-<style>
-.cart-page {
-  display: flex;
-  flex-direction: column;
-}
-
-.cart-page h2 {
-  text-align: center;
-}
-
-.cart-page thead {
-  background-color: #CC2121;
-  color: white;
-}
-
-.cart-page table, th, td {
-  border: 1px solid #ebebeb;
-  text-align: center;
-}
-
-.cart-page button {
-  background-color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.checkout-btn {
-  color: #fff;
-  font-size: 16px;
-  padding: 10px 20px;
-  border-radius: 0;
-  text-transform: capitalize;
-  background-color: #CC2121;
-}
-</style>

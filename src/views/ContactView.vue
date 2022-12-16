@@ -34,7 +34,6 @@ async function contactSend () {
   }
   isSubmitting.value = false
 }
-
 </script>
 
 <template>
@@ -43,22 +42,26 @@ async function contactSend () {
       <h1>Contact Us</h1>
       <div class="contact-container">
         <div class="contact-form">
-          <p>Send your request</p>
+          <p>Send your request to us</p>
           <form @submit.prevent="contactSend">
             <input name="first_name" placeholder="First Name *" type="text" v-model="contactRequest.firstName" required>
             <input name="last_name" placeholder="Last Name *" type="text" v-model="contactRequest.lastName" required>
             <input name="phone" placeholder="Phone *" type="text" v-model="contactRequest.phone" required>
             <input name="email" placeholder="Email *" type="email" v-model="contactRequest.email" required>
             <input name="subject" placeholder="Subject *" type="text" v-model="contactRequest.subject" required>
-            <textarea placeholder="Message *" name="message" rows="8" class="form-control2" v-model="contactRequest.message" required></textarea>
+            <textarea placeholder="Message *" name="message" rows="8" v-model="contactRequest.message" required></textarea>
             <button class="btn" :disabled="isSubmitting">{{ isSubmitting ? "Submitting" : "Send" }}</button>
           </form>
         </div>
         <div class="contact-info">
-          <h2>Contact Information</h2>
-          <p>Address: 2618 40th Street Calgary T2E 6X1</p>
-          <p>Phone: 403-888-5451</p>
-          <p>Email: info@lilysgarden.com</p>
+          <h2>Get into touch with us</h2>
+          <p>We are always open to recommendations or any feedback from you to make our shop better for our customers.</p>
+          <div class="info">
+            <p>Address: 2618 40th Street Calgary T2E 6X1</p>
+            <p>Phone: 403-888-5451</p>
+            <p>Email: info@lilysgarden.shop</p>
+            <p>Working Hours: 08:00 - 18:00 Weekdays only</p>
+          </div>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@
     <div class="policyContainer">
       <h1>Privacy Policy for Lily's Garden</h1>
 
-      <p>At Lily's Garden, accessible from lilysgarden.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Lily's Garden and how we use it.</p>
+      <p>At Lily's Garden, accessible from lilysgarden.shop, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Lily's Garden and how we use it.</p>
 
       <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
 
