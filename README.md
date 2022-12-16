@@ -4,7 +4,7 @@ Author: Rustu Mesut Eser
 
 Live Site: [lilysgarden.shop](https://lilysgarden.shop/)
 
-This project made with VueJs along with Pinia and Vue Notifications plugins. 
+This project made with VueJs along with [Pinia](https://github.com/vuejs/pinia) and [Vue Toastification](https://github.com/Maronato/vue-toastification/) plugins. 
 
 Firebase database used to store data.
 
