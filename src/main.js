@@ -16,6 +16,9 @@ const options = {
   closeOnClick: true,
   pauseOnFocusLoss: false,
   pauseOnHover: false,
+  hideProgressBar: true,
+  timeout: 3048,
+  transition: "Vue-Toastification__fade",
 };
 
 app.use(pinia)

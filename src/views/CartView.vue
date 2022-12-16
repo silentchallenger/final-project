@@ -1,6 +1,6 @@
 <script setup>
 import CartItem from '../components/CartItem.vue';
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink } from "vue-router";
 import { computed } from 'vue';
 import { useCartStore } from '../stores/cart';
 
@@ -20,10 +20,10 @@ const cartStore = useCartStore();
     <div class="cart-page">
       <h2>Cart</h2>
       <div v-if="cartStore.items.length> 0">
-        <table >
+        <table>
           <thead>
             <tr>
-              <th style="width: 15%">Thumbnail</th>
+              <th style="width: 15%">Picture</th>
               <th style="width: 25%">Product</th>
               <th style="width: 15%">Price</th>
               <th style="width: 15%">Quantity</th>
@@ -36,11 +36,11 @@ const cartStore = useCartStore();
           </tbody>
         </table>
         <div>
-        <p>{{ totalPrice }}</p>
-          <RouterLink to="/checkout" class="checkout-btn">Proceed To Checkout</RouterLink>
+          <p>{{ totalPrice }}</p>
+          <RouterLink to="/checkout" class="checkout-btn btn">Proceed To Checkout</RouterLink>
         </div>
       </div>
-      <p v-else>Empty Cart</p>
+      <p v-else>Your cart is empty</p>
     </div>
   </main>
 </template>
@@ -49,6 +49,10 @@ const cartStore = useCartStore();
 .cart-page {
   display: flex;
   flex-direction: column;
+}
+
+.cart-page h2 {
+  text-align: center;
 }
 
 .cart-page thead {
@@ -69,7 +73,7 @@ const cartStore = useCartStore();
 
 .checkout-btn {
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   padding: 10px 20px;
   border-radius: 0;
   text-transform: capitalize;

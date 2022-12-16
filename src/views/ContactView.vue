@@ -48,10 +48,10 @@ async function contactSend () {
             <input name="first_name" placeholder="First Name *" type="text" v-model="contactRequest.firstName" required>
             <input name="last_name" placeholder="Last Name *" type="text" v-model="contactRequest.lastName" required>
             <input name="phone" placeholder="Phone *" type="text" v-model="contactRequest.phone" required>
-            <input name="email" placeholder="Email *" type="text" v-model="contactRequest.email" required>
+            <input name="email" placeholder="Email *" type="email" v-model="contactRequest.email" required>
             <input name="subject" placeholder="Subject *" type="text" v-model="contactRequest.subject" required>
             <textarea placeholder="Message *" name="message" rows="8" class="form-control2" v-model="contactRequest.message" required></textarea>
-            <button :disabled="isSubmitting">{{ isSubmitting ? "Submitting" : "Send" }}</button>
+            <button class="btn" :disabled="isSubmitting">{{ isSubmitting ? "Submitting" : "Send" }}</button>
           </form>
         </div>
         <div class="contact-info">

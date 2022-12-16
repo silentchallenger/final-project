@@ -85,5 +85,5 @@ router.afterEach((to, from) => {
 
 
 <style> 
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Roboto:wght@300&display=swap');
 </style>

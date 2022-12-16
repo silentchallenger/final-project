@@ -1,15 +1,23 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useCartStore } from '../stores/cart';
 import firebaseApp from "../firebase";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { useToast } from "vue-toastification";
 import router from '../router'
 
+const totalPrice = computed(() => {
+  let cartSum = 0;
+  for (let i = 0; i < cartStore.items.length; i++) {
+    cartSum = cartSum + cartStore.items[i].price * cartStore.items[i].quantity
+  }
+  return cartSum;
+})
 
 const toast = useToast();
 
 const isSubmitting = ref(false);
+
 const cartStore = useCartStore();
 
 const db = getFirestore(firebaseApp)
@@ -49,71 +57,177 @@ async function orderSend () {
 
 <template>
   <main>
-    <div>
-      <form @submit.prevent="orderSend">
-        <div>
-          <label for="first_name" required>First Name</label>
-          <input type="text" v-model="orderRequest.firstName" id="first_name" placeholder="First Name" required="">
-        </div>
-        <div>
-          <label for="last_name" required>Last Name</label>
-          <input type="text" v-model="orderRequest.lastName" id="last_name" placeholder="Last Name" required>
-        </div>
-        <div>
-          <label for="phone">Phone</label>
-          <input type="text" v-model="orderRequest.phone" id="phone" placeholder="Phone">
-        </div>
-        <div>
-          <label for="email" class="required">Email Address</label>
-          <input type="email" v-model="orderRequest.email" id="email" placeholder="Email Address" required>
-        </div>
-        <div>
-          <label for="country" class="required">Country</label>
-          <select name="country nice-select" v-model="orderRequest.country" id="country">
-            <option value="Afghanistan">Afghanistan</option>
-            <option value="Albania">Albania</option>
-            <option value="Algeria">Algeria</option>
-            <option value="Armenia">Armenia</option>
-            <option value="Bangladesh">Bangladesh</option>
-            <option value="India">India</option>
-            <option value="Pakistan">Pakistan</option>
-            <option value="England">England</option>
-            <option value="London">London</option>
-            <option value="London">London</option>
-            <option value="China">China</option>
-          </select>
-        </div>
-        <div>
-          <label for="address" class="required mt-20">Street address</label>
-          <input type="text" v-model="orderRequest.address" id="address" placeholder="Street address Line 1" required="">
-        </div>
-        <div>
-          <input type="text" v-model="orderRequest.address2" placeholder="Street address Line 2 (Optional)">
-        </div>
-        <div>
-          <label for="city" class="required">City</label>
-          <input type="text" v-model="orderRequest.city" id="city" placeholder="City" required="">
-        </div>
-        <div>
-          <label for="state">State / Division</label>
-          <input type="text" v-model="orderRequest.state" id="state" placeholder="State / Division">
-        </div>
-        <div>
-          <label for="postcode" class="required">Postcode / ZIP</label>
-          <input type="text" v-model="orderRequest.postalCode" id="postcode" placeholder="Postcode / ZIP" required="">
-        </div>
-        <button>Submit Order</button>
-      </form>
+    <div class="checkout-cont">
+      <div class="billing-cont">
+        <h2>Billing Information</h2>
+        <form id="billing-form" class="billing-form" @submit.prevent="orderSend">
+          <div class="name-fields">
+            <div class="name">
+              <label for="first_name">First Name</label>
+              <input type="text" v-model="orderRequest.firstName" id="first_name" placeholder="First Name *" required>
+            </div>
+            <div class="name">
+              <label for="last_name" required>Last Name</label>
+              <input type="text" v-model="orderRequest.lastName" id="last_name" placeholder="Last Name *" required>
+            </div>
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="text" v-model="orderRequest.phone" id="phone" placeholder="Phone *" required>
+          </div>
+          <div>
+            <label for="email" class="required">Email Address</label>
+            <input type="email" v-model="orderRequest.email" id="email" placeholder="Email Address *" required>
+          </div>
+          <div>
+            <label for="address">Street Address</label>
+            <input type="text" v-model="orderRequest.address" id="address" placeholder="Street address Line 1 *" required>
+          </div>
+          <div>
+            <input type="text" v-model="orderRequest.address2" placeholder="Street Address Line 2 (Optional)">
+          </div>
+          <div>
+            <label for="city">City</label>
+            <input type="text" v-model="orderRequest.city" id="city" placeholder="City *" required>
+          </div>
+          <div>
+            <label for="state">State / Division</label>
+            <input type="text" v-model="orderRequest.state" id="state" placeholder="State / Division">
+          </div>
+          <div>
+            <label for="country" class="required">Country</label>
+            <input type="text" v-model="orderRequest.country" placeholder="Country *" id="country" required>
+          </div>
+          <div>
+            <label for="postcode">Postcode / ZIP</label>
+            <input type="text" v-model="orderRequest.postalCode" id="postcode" placeholder="Postcode / ZIP *" required>
+          </div>
+        </form>
+      </div>
+      <div class="order-cont">
+        <h2>Order Summary</h2>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 30%">Product</th>
+              <th style="width: 20%">Price</th>
+              <th style="width: 20%">Quantity</th>
+              <th style="width: 30%">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="product in cartStore.items" :key="product.id">
+              <td>{{ product.name }}</td>
+              <td>${{ product.price }}</td>
+              <td>{{ product.quantity }}</td>
+              <td>${{ product.price * product.quantity }}</td>
+            </tr>
+            <tr>
+              <td colspan="3" style="font-weight: bold;">Sub Total</td>
+              <td>${{ totalPrice }}</td>
+            </tr>
+            <tr>
+              <td colspan="3">Free Shipping</td>
+              <td>$0</td>
+            </tr>
+            <tr>
+              <td colspan="3">Total</td>
+              <td>${{ totalPrice}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button type="submit" class="submit-btn btn" form="billing-form" :disabled="isSubmitting">{{ isSubmitting ? "Submitting" : "Place Order" }}</button>
+      </div>
     </div>
   </main>
 </template>
 
 <style>
-form div {
+.checkout-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.billing-cont, .order-cont {
+  padding: 1rem;
   width: 100%;
 }
 
-form label {
-  display: block;
+.checkout-cont h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
 }
+
+.billing-form div {
+  width: 100%;
+}
+
+.billing-form .name {
+  width: 48%;
+}
+
+.billing-form input {
+  padding: 0.5rem;
+  width: 100%;
+
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  color: #555;
+}
+
+.billing-form input:active, .billing-form input:focus {
+  outline: none;
+  border-color: #CC2121;
+  background-color: #fff;
+}
+
+.billing-form label {
+  display: block;
+  margin-top: 1rem;
+}
+
+.order-cont table {
+  background-color: #f7f7f7;
+  width: 100%;
+
+  margin-top: 2rem;
+}
+
+.order-cont table, th, td {
+  border: 1px solid #ebebeb;
+  text-align: center;
+}
+
+.order-cont table tr {
+  width: 100%;
+  height: 50px;
+}
+
+.name-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.submit-btn {
+  color: #fff;
+  border-radius: 0;
+  text-transform: capitalize;
+  background-color: #CC2121;
+  outline: none;
+
+  padding: 10px 20px;
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .checkout-cont {
+  flex-direction: row;
+}
+}
+
 </style>
